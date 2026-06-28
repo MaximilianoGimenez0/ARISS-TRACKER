@@ -22,10 +22,6 @@ const InfoPage = () => {
                     <h1 className={styles.title}>
                         Ingeniería detrás del <span className={styles.accentOrange}>Rastreo</span>
                     </h1>
-                    <p className={styles.subtitle}>
-                        Descubre cómo utilizamos matemáticas orbitales, modelos físicos complejos y trigonometría
-                        tridimensional para predecir la posición de satélites en tiempo real con precisión milimétrica.
-                    </p>
                 </header>
 
                 {/* 2. Sección de Datos TLE (Explicación del origen de la información) */}
