@@ -1,0 +1,198 @@
+.dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.globeWrapper {
+  position: relative;
+  border-radius: 16px;
+  border: 1px solid #1e293b;
+  background: #020617;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.globeContainer {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.issMarkerContainer {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.issMarker {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.6));
+  animation: float 3s ease-in-out infinite;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
+}
+
+.issRadar {
+  animation: pulse 2s infinite ease-in-out;
+  transform-origin: center;
+}
+
+.issMarkerContainer:hover .issMarker {
+  filter: drop-shadow(0 0 12px rgba(249, 115, 22, 0.9));
+  transform: scale(1.1) translateY(-4px);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.15;
+  }
+  100% {
+    transform: scale(0.85);
+    opacity: 0.8;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.issTooltip {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px) scale(0.95);
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 10px 14px;
+  border-radius: 12px;
+  color: #f8fafc;
+  font-size: 0.75rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(249, 115, 22, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 9999;
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 0.25s;
+}
+
+/* Pointer arrow to anchor tooltip in 3D space */
+.issTooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: rgba(15, 23, 42, 0.82);
+  display: block;
+  width: 0;
+}
+
+.issMarkerContainer:hover .issTooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.focusButton {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  border-radius: 10px;
+  color: #f8fafc;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  outline: none;
+}
+
+.focusButton:hover:not(:disabled) {
+  background: rgba(249, 115, 22, 0.15);
+  border-color: #f97316;
+  color: #f97316;
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 0 15px rgba(249, 115, 22, 0.4);
+}
+
+.focusButton:active:not(:disabled) {
+  transform: scale(0.95) translateY(0);
+  animation: buttonClickPing 0.4s ease-out;
+}
+
+.focusButton svg {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.focusButton:hover:not(:disabled) svg {
+  transform: rotate(90deg);
+}
+
+.focusButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  border-color: #1e293b;
+  color: #64748b;
+  background: rgba(15, 23, 42, 0.4);
+  pointer-events: none;
+  box-shadow: none;
+}
+
+@keyframes buttonClickPing {
+  0% {
+    box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(249, 115, 22, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(249, 115, 22, 0);
+  }
+}

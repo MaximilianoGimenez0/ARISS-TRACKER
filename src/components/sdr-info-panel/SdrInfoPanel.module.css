@@ -1,0 +1,209 @@
+.panelContainer {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+
+  padding: 1.25rem 2rem;
+  box-sizing: border-box;
+
+  transition: all 0.3s ease;
+
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+}
+
+.panelContainer:hover {
+  border-color: #334155;
+  box-shadow: 0 4px 25px -2px rgba(56, 189, 248, 0.1);
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: 900px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1rem;
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  min-width: 280px;
+}
+
+.frequencySection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+
+  color: #38bdf8;
+  font-size: 1.25rem;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.iconWrapper svg {
+  display: block;
+}
+
+.panelContainer:hover .iconWrapper {
+  color: #00ff00;
+  border-color: rgba(0, 255, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.1);
+}
+
+.iconWrapper:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 6px #38bdf8);
+}
+
+.infoContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  color: #64748b;
+}
+
+.value {
+  font-size: 1.125rem;
+  font-weight: 700;
+
+  color: #f8fafc;
+}
+
+.subValue {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.frequencyDisplay {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid #1e293b;
+
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    monospace;
+}
+
+.frequencyValue {
+  font-size: 1.25rem;
+  font-weight: 700;
+
+  color: #38bdf8;
+
+  letter-spacing: 0.05em;
+
+  text-shadow: 0 0 8px rgba(56, 189, 248, 0.3);
+}
+
+.copyButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+
+  color: #94a3b8;
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.copyButton:hover {
+  background: rgba(56, 189, 248, 0.1);
+  border-color: #38bdf8;
+  color: #38bdf8;
+}
+
+.copyButton.copied {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: #22c55e;
+  color: #22c55e;
+
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.2);
+}
+
+@media (max-width: 768px) {
+  .panelContainer {
+    padding: 1rem;
+  }
+
+  .contentWrapper {
+    flex-direction: column;
+    gap: 1.5rem;
+
+    max-width: 100%;
+  }
+
+  .section,
+  .frequencySection {
+    width: 100%;
+    min-width: unset;
+
+    justify-content: center;
+  }
+
+  .infoContent {
+    align-items: center;
+    text-align: center;
+  }
+}

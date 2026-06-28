@@ -1,0 +1,226 @@
+.container {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  background-color: transparent;
+  /* Blends with MainLayout */
+  color: #e2e8f0;
+  font-family: 'Inter', 'Roboto', sans-serif;
+  padding: 1rem 0;
+  /* MainLayout already has padding */
+  line-height: 1.6;
+
+  /* Futuristic scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 191, 255, 0.3) transparent;
+}
+
+.container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 191, 255, 0.3);
+  border-radius: 10px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 191, 255, 0.6);
+}
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Header */
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+  text-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #94a3b8;
+  max-width: 700px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+.accentOrange {
+  color: #FF5A00;
+}
+
+.accentBlue {
+  color: #00bfff;
+}
+
+/* Cards */
+.card {
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 24px 48px -12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 191, 255, 0.3);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 24px 48px -12px rgba(0, 191, 255, 0.15);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  background: linear-gradient(135deg, rgba(255, 90, 0, 0.1) 0%, rgba(255, 90, 0, 0.05) 100%);
+  border: 1px solid rgba(255, 90, 0, 0.2);
+  border-radius: 12px;
+  color: #FF5A00;
+  transition: all 0.4s ease;
+}
+
+.card:hover .iconWrapper {
+  background: linear-gradient(135deg, rgba(0, 191, 255, 0.1) 0%, rgba(0, 191, 255, 0.05) 100%);
+  border-color: rgba(0, 191, 255, 0.2);
+  color: #00bfff;
+}
+
+.cardTitle {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.cardText {
+  color: #cbd5e1;
+  font-size: 1.125rem;
+  margin-bottom: 1.25rem;
+  font-weight: 300;
+}
+
+/* TLE Display */
+.tleTerminal {
+  background-color: #000000;
+  border-radius: 8px;
+  padding: 1.5rem;
+  font-family: 'Space Mono', 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.tleLine {
+  display: block;
+  white-space: pre;
+  color: #64748b;
+}
+
+.tleHighlightOrange {
+  color: #FF5A00;
+  font-weight: bold;
+}
+
+.tleHighlightBlue {
+  color: #00bfff;
+  font-weight: bold;
+}
+
+.tagContainer {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: rgba(255, 90, 0, 0.1);
+  color: #FF5A00;
+  border: 1px solid rgba(255, 90, 0, 0.2);
+}
+
+.tagBlue {
+  background-color: rgba(0, 191, 255, 0.1);
+  color: #00bfff;
+  border-color: rgba(0, 191, 255, 0.2);
+}
+
+/* Grid Layouts */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mathBlock {
+  background: rgba(0, 191, 255, 0.05);
+  border-left: 3px solid #00bfff;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 8px 8px 0;
+  font-family: 'Space Mono', 'Courier New', Courier, monospace;
+  font-size: 1.1rem;
+  color: #e2e8f0;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.formula {
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.formula sub {
+  font-size: 0.7em;
+}
+
+
+.strong {
+  color: #ffffff;
+  font-weight: 600;
+}

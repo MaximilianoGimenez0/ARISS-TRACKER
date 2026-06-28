@@ -1,0 +1,65 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 48px;
+  background: rgba(2, 6, 23, 0.75); /* transparent background matching theme */
+  backdrop-filter: blur(12px); /* premium glassmorphism */
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  color: #475569; /* Slate-600 */
+  font-size: 0.75rem;
+  font-weight: 500;
+  z-index: 40;
+  box-sizing: border-box;
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: 0.05em;
+}
+
+.footerLeft {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.statusIndicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #a3f0c9; /* Subdued green */
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  background-color: #00ff00;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00ff00;
+  animation: statusPulse 2s infinite ease-in-out;
+}
+
+@keyframes statusPulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.footerRight {
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    left: 0 !important; /* Fixed left on mobile drawer */
+    padding: 0 1.25rem;
+  }
+}
