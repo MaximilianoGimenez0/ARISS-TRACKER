@@ -1,8 +1,8 @@
 // Imports
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainLayout from '@/layouts/MainLayout';
-import HomePage from '@/pages/home/HomePage.tsx';
-import InfoPage from '@/pages/info/InfoPage.tsx';
+import TrackerPage from '@/pages/tracker/TrackerPage';
+import InfoPage from '@/pages/info/InfoPage';
 
 // Componente principal
 
@@ -18,10 +18,10 @@ const AppRouter = () => {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           {/* Ruta base (Index) */}
-          <Route index element={<HomePage />} />
-          
+          <Route index element={<InfoPage />} />
+
           {/* Ruta de información técnica */}
-          <Route path="info" element={<InfoPage />} />
+          <Route path="tracker" element={<TrackerPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

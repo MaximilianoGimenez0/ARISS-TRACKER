@@ -1,6 +1,6 @@
 // Imports
 import SdrGlobe from '@/components/sdr-globe/SdrGlobe';
-import styles from './HomePage.module.css';
+import styles from './TrackerPage.module.css';
 
 // Componente principal
 
@@ -9,8 +9,8 @@ import styles from './HomePage.module.css';
  * Actúa como contenedor de alto nivel para montar el globo terráqueo 3D interactivo
  * (SdrGlobe) que maneja toda la lógica del rastreo y visualización.
  */
-const HomePage = () => {
-  
+const TrackerPage = () => {
+
   // Render
   return (
     <div className={styles.container}>
@@ -19,4 +19,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default TrackerPage;

@@ -43,7 +43,7 @@
 
 .frequencySection {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   min-width: 80px;
 }

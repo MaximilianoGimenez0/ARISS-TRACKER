@@ -80,15 +80,19 @@ const Navbar = ({ isExpanded, setIsExpanded, isMobileOpen, setIsMobileOpen }: Na
 
         {/* Enlaces de Rutas */}
         <nav className={styles.nav}>
+
+
           <NavLink to="/" className={linkClassName} onClick={closeMobileSidebar}>
-            <FiGlobe className={styles.linkIcon} />
-            <span className={styles.linkText}>Tracker</span>
-          </NavLink>
-          
-          <NavLink to="/info" className={linkClassName} onClick={closeMobileSidebar}>
             <FiInfo className={styles.linkIcon} />
             <span className={styles.linkText}>Info</span>
           </NavLink>
+
+          <NavLink to="/tracker" className={linkClassName} onClick={closeMobileSidebar}>
+            <FiGlobe className={styles.linkIcon} />
+            <span className={styles.linkText}>Tracker</span>
+          </NavLink>
+
+
         </nav>
 
         {/* 

@@ -112,7 +112,7 @@ const SdrInfoPanel = ({ station, frequency }: SdrInfoPanelProps) => {
             <span className={styles.label}>Frecuencia</span>
 
             <div className={styles.frequencyDisplay}>
-              <span className={styles.frequencyValue}>{frequency}</span>
+              <span className={styles.frequencyValue}>{frequency} Mhz</span>
 
               <button
                 onClick={handleCopy}
@@ -129,7 +129,7 @@ const SdrInfoPanel = ({ station, frequency }: SdrInfoPanelProps) => {
 
         <div className={styles.frequencySection}>
           <div className={styles.infoContent}>
-            <span className={styles.label}>Distancia Espacial Total</span>
+            <span className={styles.label}>Distancia</span>
             <div className={styles.frequencyDisplay}>
               <span className={styles.frequencyValue}>{station.distanceFromIss?.toFixed(2) || '0.00'} km</span>
             </div>
@@ -138,7 +138,7 @@ const SdrInfoPanel = ({ station, frequency }: SdrInfoPanelProps) => {
 
         <div className={styles.frequencySection}>
           <div className={styles.infoContent}>
-            <span className={styles.label}>Elevación Topocéntrica</span>
+            <span className={styles.label}>Elevación</span>
             <div className={styles.frequencyDisplay}>
               <span className={styles.frequencyValue}>{station.elevation?.toFixed(2) || '0.00'}°</span>
             </div>

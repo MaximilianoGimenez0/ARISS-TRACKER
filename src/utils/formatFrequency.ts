@@ -78,7 +78,7 @@ export const getElevation = (
     station3D.y * station3D.y +
     station3D.z * station3D.z
   );
-  if (stationNorm === 0) return -90; 
+  if (stationNorm === 0) return -90;
 
   // Vector unitario que apunta al Cenit en la posición de la estación
   const nx = station3D.x / stationNorm;
@@ -122,7 +122,7 @@ export const getStationFrequency = (
   station: IssPosition
 ): string => {
   if (deltaTimeSeconds <= 0) {
-    return `${baseFreqMHz.toFixed(5)} MHz`;
+    return `${baseFreqMHz.toFixed(5)}`;
   }
 
   const station3D = toCartesian(station.lat, station.lng, station.alt);
@@ -138,7 +138,7 @@ export const getStationFrequency = (
   // Fórmula de desplazamiento Doppler para frecuencias electromagnéticas no relativistas.
   const shiftedFreq = baseFreqMHz * (1 - radialVelocityKmS / C_KM_S);
 
-  return `${shiftedFreq.toFixed(5)} MHz`;
+  return `${shiftedFreq.toFixed(5)}`;
 };
 
 /**
